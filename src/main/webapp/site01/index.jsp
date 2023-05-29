@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
 <head>
-		<title>Mi Tienda Online</title>
+		<title>Nova Tech</title>
 		<link href="css/estilos.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -35,6 +35,9 @@
 	
 				<li><a id="texto" style="font-size: 2rem;" href="https://github.com/StevenSsj1/">GitHub</a></li>
 				</ul>
+				<h2 style="color: white;">Desarrollado por Lenin Llano</h2>
+				<iframe
+				src="https://www.google.com/maps/d/embed?mid=1Ktkk5gP3xASD5xrq9ekl_33YLP_3nqk&ehbc=2E312F" width="640" height="480"></iframe>
 			</footer>		
 		
 		

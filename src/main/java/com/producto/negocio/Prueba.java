@@ -71,6 +71,41 @@ public class Prueba {
 		   
 	    return tabla;
 	}
-
+	
+	public String consultarProducto(String cod) {
+		String tabla = "<table border=2>";
+		String consulta = "SELECT id_celular, nombre_celular, precio_celular, id_cate, descripcion, cantidad\n"
+				+ "FROM tb_productos\n"
+				+ "WHERE id_cate ="+cod+"";
+		ResultSet rs = null;
+		tabla += "<tr>"
+				+ "<th>Codigo</th>"
+				+ "<th>Descripcion</th>"
+				+ "<th>Precio</th>"
+				+ "<th>Cantidad</th>"
+				+"<th></th>"
+				+"<th></th>"
+				+ "</tr>";
+		Conexion con = new Conexion();
+		try {
+			rs = con.Consulta(consulta);
+			
+			while (rs.next()) {
+				tabla += "<tr><td><pre Style=\"text-align; center\">" + rs.getInt(1) + "</pre></td>"
+		                + "<td><pre Style=\"text-align; center\">" + rs.getString(2) + "</pre></td>"
+		                + "<td><pre Style=\"text-align; center\">" + rs.getString(3) + "</pre></td>"
+		                + "<td><pre Style=\"text-align; center\">" + rs.getInt(6) + "</pre></td>"
+		                + "<td><a href= BuscarProducto.jsp?cod="+ rs.getInt(1)+"><pre style=\"text-align; center\">Modificar</pre></a></td>"
+		                + "<td><a href= EliminarProducto.jsp?cod="+ rs.getInt(1)+"><pre style=\"text-align; center\">Eliminar</pre></a></td>";
+			}	tabla += "</table>";
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+	
+		return tabla;	
+	}
+	
+	
+	
 
 }

@@ -6,45 +6,42 @@ import com.producto.datos.Conexion;
 
 public class Usuario {
 	
-	private String Login;
-	private String Clave;
-	private int Perfil;
-	private String Nombre;
+	private UsuarioData data = new UsuarioData();
 
 	public Usuario() {
 	}
 
 	public String getLogin() {
-		return Login;
+		return data.Login;
 	}
 
 	public void setLogin(String login) {
-		Login = login;
+		data.Login = login;
 	}
 
 	public String getClave() {
-		return Clave;
+		return data.Clave;
 	}
 
 	public void setClave(String clave) {
-		Clave = clave;
+		data.Clave = clave;
 	}
 
 	public int getPerfil() {
-		return Perfil;
+		return data.Perfil;
 	}
 
 	public void setPerfil(int perfil) {
-		Perfil = perfil;
+		data.Perfil = perfil;
 	}
 
 	public String getNombre() {
-		return Nombre;
+		return data.Nombre;
 	}
 
 	public void setNombre(String nombre) {
 
-		Nombre = nombre;
+		data.Nombre = nombre;
 	}
 	
 	

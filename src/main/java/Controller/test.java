@@ -9,18 +9,21 @@ public class test {
 		// TODO Auto-generated method stub
 			int cod = 0;
 			String dd = null;
-			String sql="SELECT * FROM tb_pagina pag, tb_perfil per, \"tb_perfilPagina\" pper "
-		    		+ "WHERE pag.id_pag = pper.id_pag AND pper.id_per = per.id_per AND pper.id_per ="+1;
+			String description = null;
+			String consulta = "SELECT id_celular, nombre_celular, precio_celular, id_cate, descripcion\n"
+					+ "FROM tb_productos\n"
+					+ "WHERE id_cate ="+100+"";
 			//System.out.print(sentencia);
 			try
 			{
 				ResultSet rs;
 				Conexion clsCon=new Conexion();
-				rs=clsCon.Consulta(sql);
+				rs=clsCon.Consulta(consulta);
 					if(rs.next())
 					{
-						 cod = rs.getInt(6);
+						 cod = rs.getInt(1);
 						 dd = rs.getString(2);
+						 description = rs.getString(3);
 					}
 					else
 					{
@@ -34,6 +37,7 @@ public class test {
 		
 		System.out.println(cod);
 		System.out.println(dd);
+		System.out.println(description);
 	
 	}
 
