@@ -105,4 +105,22 @@ public class producto {
 			return eliminado;
 
 		}
+		
+		public boolean Nueva_Oferta(int cod, int precio) {
+			boolean agregado = false;
+			double precio_oferta = precio + (0.4*precio);
+			
+			Conexion con = new Conexion();
+			String sql = "Insert into tb_ofertas values (Default,"+cod+","+precio_oferta
+					+",true)";
+					
+			try {
+				con.Ejecutar(sql);
+				agregado = true;
+			}catch(Exception e) {
+				agregado = false;
+			}
+			
+			return agregado;
+		}
 }

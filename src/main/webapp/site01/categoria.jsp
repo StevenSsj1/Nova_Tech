@@ -44,10 +44,10 @@
 		        String id_cat=request.getParameter("txtestado-categoria");
 		    	Prueba cat = new Prueba();
 		    	if(id_cat == null){
-		    		String tablaCate = cat.consultar_por_categoria("0");
+		    		String tablaCate = cat.obtenerProductosConOferta();
 		    		out.print(tablaCate);
 		    	}else{
-		    		String tablaCate = cat.consultar_por_categoria(id_cat);
+		    		String tablaCate = cat.obtenerProductosConOfertaPorCategoria(id_cat);
 		    		out.print(tablaCate);
 		    	}
               %>

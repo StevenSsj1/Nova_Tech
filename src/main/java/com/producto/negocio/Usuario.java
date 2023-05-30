@@ -76,6 +76,50 @@ public class Usuario {
 	}
 	return respuesta;
 	}
-
+	
+	public boolean ModificarPassword(String usuario, String password) {
+		
+		boolean agregado = false;
+		Conexion con = new Conexion();
+		String sql = "Update tb_usuario set clave_us = '"+password+"' "
+				+ " where nombre_us = '"+usuario+"'";
+				
+		try {
+			con.Ejecutar(sql);
+			agregado = true;
+		}catch(Exception e) {
+			agregado = false;
+		}
+		return agregado;
+		
+	}
+	
+	public String verificarPassword(String nlogin)
+	{
+		String pss = "";
+		String sentencia= "Select clave_us from tb_usuario where nombre_us = '"+nlogin+"'";
+		try
+		{
+			ResultSet rs;
+			Conexion clsCon=new Conexion();
+			rs=clsCon.Consulta(sentencia);
+				if(rs.next())
+				{
+					pss = rs.getString(1);
+				}
+				else
+				{
+					pss="Invalida";
+					rs.close();
+				}
+		}
+	catch(Exception ex)
+	{
+	System.out.println( ex.getMessage());
+	}
+	return pss;
+	}
+	
+	
 }
 
